@@ -98,8 +98,8 @@ def items_sales_stores():
 # 6) Acquire the Open Power Systems Data for Germany, which has been rapidly expanding its renewable energy production in recent years. The data set includes country-wide totals of electricity consumption, wind power production, and solar power production for 2006-2017. You can get the data here: https://raw.githubusercontent.com/jenfly/opsd/master/opsd_germany_daily.csv
 def power_df():
     
-    url = https://raw.githubusercontent.com/jenfly/opsd/master/opsd_germany_daily.csv
+    url = 'https://raw.githubusercontent.com/jenfly/opsd/master/opsd_germany_daily.csv'
 
-    power_df = pd.read_csv('url')
+    power_df = pd.read_csv(url)
 
     return power_df
