@@ -50,3 +50,28 @@ def set_datetime_index(df, target):
 def add_sales_total(merged):
     merged['sales_total'] = merged.sale_amount/merged.item_price
     return merged
+
+###### OPS DATA  ########
+
+def convert_power_datetime(df):
+    df.Date = pd.to_datetime(df.Date)
+    return df
+
+def plot_distribution(df):
+    numeric_data = df._get_numeric_data()
+    for i in numeric_data.columns:
+        sns.distplot(numeric_data[i])
+        plt.show()
+
+def set_power_index(df):
+    df = df.set_index('Date').sort_index()
+    return df
+
+def add_month_year(df):
+    df['month'] = df.index.month
+    df['year'] = df.index.year
+    return df
+
+def fillna(df):
+    df = df.fillna(0)
+    return df
