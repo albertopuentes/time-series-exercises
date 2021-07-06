@@ -9,6 +9,8 @@ warnings.filterwarnings("ignore")
 
 import seaborn as sns
 
+#######  STORES DATA ########
+
 def stores_convert_datetime():
     '''Function will take in stores, items, sales csv's, merge them and convert date column to datetime format'''
 
@@ -42,5 +44,9 @@ def plot_sales_price(merged):
         plt.show()
 
 def set_datetime_index(df, target):
-    df = df.set_index('target').sort_index()
+    df = df.set_index(target).sort_index()
     return df
+
+def add_sales_total(merged):
+    merged['sales_total'] = merged.sale_amount/merged.item_price
+    return merged
